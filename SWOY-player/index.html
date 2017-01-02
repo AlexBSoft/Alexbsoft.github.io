@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="ru" data-useragent="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" data-platform="Win32"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Свой плеер</title>
+
+
+<!--Мета для мобилок-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta name="theme-color" content="#000000">
+
+<!--Стайл щит-->
+<link rel="stylesheet" href="./files/skeleton.css">
+<link rel="stylesheet" href="./files/base.css">
+<link rel="stylesheet" href="./files/layout.css">
+<link rel="stylesheet" href="./font/css/font-awesome.min.css">
+
+<!--jquery-->
+<script src="./files/jquery.min.js"></script>
+
+<!--кросс-браузерность-->
+<script src="./files/html5media.min.js"></script>
+
+<script>
+// Помогаем подобрать CSS для нашего браузера
+var b = document.documentElement;
+b.setAttribute('data-useragent', navigator.userAgent);
+b.setAttribute('data-platform', navigator.platform );
+</script>
+</head>
+
+<body>
+
+
+<!--Вроде как задний фон, но он не работает-->
+<div id="preload">
+    <img src="./files/gradientbg.png" width="1" height="1" alt="">
+</div>
+
+<!--ну что, собсна весь файл-->
+<div class="container">
+			<br>
+			<br>
+						<br>
+			<br>
+						<br>
+    <div>
+        <h1 align=center>Свой Плеер</h1>
+    </div>
+    <div class="column add-bottom">
+	<div class="sticky-nav">
+        <div id="mainwrap" class="header">
+            <div id="nowPlay">
+                <span class="left" id="npAction">...</span>
+                <span class="right" id="npTitle">All This Is - Joe L.'s Studio</span>
+            </div>
+            <div id="audiowrap">
+                <div id="audio0">
+                    <audio preload="" id="audio1" controls="controls" src="https://archive.org/download/mythium/JLS_ATI.mp3">Your browser does not support HTML5 Audio!</audio>
+                </div>
+                <div id="tracks">
+                    <a id="btnPrev">«</a>
+					<a id="btnDwn"> <i class="fa fa-download fa-fw"></i> </a>
+					<a id="btnLoop"> <i class="fa fa-retweet" aria-hidden="true"></i> </a>
+					<a id="btnSuffle" style="color"> <i class="fa fa-random" aria-hidden="true"></i> </a>
+                    <a id="btnNext">»</a>
+                </div>
+				<br>
+            </div>
+			
+			</div>
+
+			<!--Список файлцов-->
+            <div id="plwrap">
+                <ul id="plList">
+                    <li class="plSel">
+                        <div class="plItem">
+                            <div class="plNum">01.</div>
+                            <div class="plTitle">All This Is - Joe L.'s Studio</div>
+                            <div class="plLength">2:46</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">02.</div>
+                            <div class="plTitle">The Forsaken - Broadwing Studio (Final Mix)</div>
+                            <div class="plLength">8:31</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">03.</div>
+                            <div class="plTitle">All The King's Men - Broadwing Studio (Final Mix)</div>
+                            <div class="plLength">5:02</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">04.</div>
+                            <div class="plTitle">The Forsaken - Broadwing Studio (First Mix)</div>
+                            <div class="plLength">8:32</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">05.</div>
+                            <div class="plTitle">All The King's Men - Broadwing Studio (First Mix)</div>
+                            <div class="plLength">5:05</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">06.</div>
+                            <div class="plTitle">All This Is - Alternate Cuts</div>
+                            <div class="plLength">2:49</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">07.</div>
+                            <div class="plTitle">All The King's Men (Take 1) - Alternate Cuts</div>
+                            <div class="plLength">5:45</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">08.</div>
+                            <div class="plTitle">All The King's Men (Take 2) - Alternate Cuts</div>
+                            <div class="plLength">5:27</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">09.</div>
+                            <div class="plTitle">Magus - Alternate Cuts</div>
+                            <div class="plLength">5:46</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">10.</div>
+                            <div class="plTitle">The State Of Wearing Address (fucked up) - Alternate Cuts</div>
+                            <div class="plLength">5:25</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">11.</div>
+                            <div class="plTitle">Magus - Popeye's (New Years '04 - '05)</div>
+                            <div class="plLength">5:54</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">12.</div>
+                            <div class="plTitle">On The Waterfront - Popeye's (New Years '04 - '05)</div>
+                            <div class="plLength">4:41</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">13.</div>
+                            <div class="plTitle">Trance - Popeye's (New Years '04 - '05)</div>
+                            <div class="plLength">13:17</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">14.</div>
+                            <div class="plTitle">The Forsaken - Popeye's (New Years '04 - '05)</div>
+                            <div class="plLength">8:13</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">15.</div>
+                            <div class="plTitle">The State Of Wearing Address - Popeye's (New Years '04 - '05)</div>
+                            <div class="plLength">7:03</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">16.</div>
+                            <div class="plTitle">Magus - Popeye's (Valentine's Day '05)</div>
+                            <div class="plLength">5:44</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">17.</div>
+                            <div class="plTitle">Trance - Popeye's (Valentine's Day '05)</div>
+                            <div class="plLength">10:47</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">18.</div>
+                            <div class="plTitle">The State Of Wearing Address - Popeye's (Valentine's Day '05)</div>
+                            <div class="plLength">5:37</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">19.</div>
+                            <div class="plTitle">All This Is - Smith St. Basement (01/08/04)</div>
+                            <div class="plLength">2:49</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">20.</div>
+                            <div class="plTitle">Magus - Smith St. Basement (01/08/04)</div>
+                            <div class="plLength">5:46</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">21.</div>
+                            <div class="plTitle">Beneath The Painted Eye - Smith St. Basement (06/06/03)</div>
+                            <div class="plLength">13:08</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">22.</div>
+                            <div class="plTitle">Innocence - Smith St. Basement (06/06/03)</div>
+                            <div class="plLength">5:16</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">23.</div>
+                            <div class="plTitle">Magus - Smith St. Basement (06/06/03)</div>
+                            <div class="plLength">5:47</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">24.</div>
+                            <div class="plTitle">Madness Explored - Smith St. Basement (06/06/03)</div>
+                            <div class="plLength">4:52</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">25.</div>
+                            <div class="plTitle">The Forsaken - Smith St. Basement (06/06/03)</div>
+                            <div class="plLength">8:44</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">26.</div>
+                            <div class="plTitle">All This Is - Smith St. Basement (12/28/03)</div>
+                            <div class="plLength">3:01</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">27.</div>
+                            <div class="plTitle">Magus - Smith St. Basement (12/28/03)</div>
+                            <div class="plLength">6:10</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">28.</div>
+                            <div class="plTitle">Madness Explored - Smith St. Basement (12/28/03)</div>
+                            <div class="plLength">5:06</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">29.</div>
+                            <div class="plTitle">Trance - Smith St. Basement (12/28/03)</div>
+                            <div class="plLength">12:33</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">30.</div>
+                            <div class="plTitle">The Forsaken - Smith St. Basement (12/28/03)</div>
+                            <div class="plLength">8:57</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">31.</div>
+                            <div class="plTitle">All This Is (Take 1) - Smith St. Basement (Nov. '03)</div>
+                            <div class="plLength">4:55</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">32.</div>
+                            <div class="plTitle">All This Is (Take 2) - Smith St. Basement (Nov. '03)</div>
+                            <div class="plLength">5:46</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">33.</div>
+                            <div class="plTitle">Beneath The Painted Eye (Take 1) - Smith St. Basement (Nov. '03)</div>
+                            <div class="plLength">14:06</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">34.</div>
+                            <div class="plTitle">Beneath The Painted Eye (Take 2) - Smith St. Basement (Nov. '03)</div>
+                            <div class="plLength">13:26</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">35.</div>
+                            <div class="plTitle">The Forsaken (Take 1) - Smith St. Basement (Nov. '03)</div>
+                            <div class="plLength">8:38</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="plItem">
+                            <div class="plNum">36.</div>
+                            <div class="plTitle">The Forsaken (Take 2) - Smith St. Basement (Nov. '03)</div>
+                            <div class="plLength">8:37</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="column add-bottom center">
+        
+    </p></div>
+</div>
+<!--конец.-->
+
+<!--Плейлист и код чтоб работал-->
+<script src="./files/playlist.js"></script>
+<script src="./files/player.js"></script>
+
+
+
+</body></html>
